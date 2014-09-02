@@ -1,2 +1,2 @@
-require_relative './aestest-server'
-run Sinatra::Application
+# require_relative './aestest-server'
+# run Sinatra::Application

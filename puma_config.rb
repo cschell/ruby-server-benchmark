@@ -9,13 +9,16 @@ directory '.'
 # Use an object or block as the rack application. This allows the
 # config file to be the application itself.
 #
-# app do |env|
-#   puts env
-#
-#   body = 'Hello, World!'
-#
-#   [200, { 'Content-Type' => 'text/plain', 'Content-Length' => body.length.to_s }, [body]]
-# end
+app do |env|
+  puts env
+  body = 'Hello, World!'
+
+  # reuqest_body = request.body.read
+  # body = JSON.parse reuqest_body
+  # id = body["id"]
+
+  [200, { 'Content-Type' => 'text/plain', 'Content-Length' => body.length.to_s }, [body]]
+end
 
 # Load “path” as a rackup file.
 #
@@ -57,7 +60,7 @@ daemonize false
 #
 # The default is “false”.
 #
-quiet = true
+# quiet = true
 
 # Configure “min” to be the minimum number of threads to use to answer
 # requests and “max” the maximum.
